@@ -10,7 +10,9 @@ select CITY, STATE from STATION
 select distinct CITY from STATION
 where CITY like 'A%' or CITY like 'E%' or CITY like 'I%' or CITY like 'O%' or CITY like 'U%'
 order by id ASC 
---Ex5:
+--or 
+where left(CITY,1) in ('u', 'e', 'o', 'a', 'i')
+  --Ex5:
 select distinct CITY from STATION
 where CITY like '%A' or CITY like '%E' or CITY like '%I' or CITY like '%O' or CITY like '%U'
 --Ex6:
