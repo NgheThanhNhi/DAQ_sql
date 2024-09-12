@@ -4,7 +4,10 @@ where ID%2=0
 --Ex 2:
 SELECT COUNT(CITY) - COUNT(DISTINCT CITY)
 FROM STATION 
---Ex 3
+--Ex 4: 
+SELECT
+round (cast(sum((item_count)*(order_occurrences))/sum (order_occurrences) as DECIMAL), 1) as mean
+FROM items_per_order
 --Ex 5:
 SELECT candidate_id ,
 count(skill) as number_of_skill
@@ -48,4 +51,8 @@ count(follower_id) as followers_count
 from Followers
 group by user_id
 order by user_id
---Ex 12: dữ liệu kỳ quá ạ
+--Ex 12: 
+SELECT distinct class 
+from Courses
+GROUP BY class
+having count(student) >=5
